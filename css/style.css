@@ -203,20 +203,127 @@ h2::after {
 }
 
 .feature {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     padding: 35px 30px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 8px 32px rgba(0, 88, 219, 0.1);
+    box-shadow: 0 8px 32px rgba(251, 84, 85, 0.15);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(251, 84, 85, 0.2);
 }
 
 .feature:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 88, 219, 0.15);
+    box-shadow: 0 20px 40px rgba(251, 84, 85, 0.25);
     background: rgba(255, 255, 255, 1);
+    border-color: rgba(251, 84, 85, 0.3);
+}
+
+.app-showcase {
+    margin: 40px 0 50px;
+    text-align: center;
+}
+
+.showcase-title {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.screenshots-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 10px 30px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #0058DB #e0e0e0;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.screenshots-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.screenshots-scroll::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    border-radius: 10px;
+}
+
+.screenshots-scroll::-webkit-scrollbar-thumb {
+    background: #0058DB;
+    border-radius: 10px;
+}
+
+.phone-mockup {
+    flex: 0 0 auto;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.phone-mockup:hover {
+    transform: translateY(-10px);
+}
+
+.phone-frame {
+    width: 200px;
+    height: 400px;
+    background: #1a1a1a;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), inset 0 2px 5px rgba(255,255,255,0.1);
+    position: relative;
+    border: 2px solid #333;
+}
+
+.phone-frame::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 20px;
+    background: #1a1a1a;
+    border-radius: 0 0 15px 15px;
+    z-index: 10;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.phone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background: #fff;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.phone-screen img:hover {
+    opacity: 0.9;
+}
+
+.phone-mockup span {
+    display: block;
+    margin-top: 15px;
+    color: #000;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .product-logo {
@@ -243,7 +350,7 @@ h2::after {
 }
 
 .feature h3 {
-    color: #0058DB;
+    color: #FB5455;
     font-size: 1.6rem;
     margin-bottom: 15px;
     font-weight: 600;
@@ -254,13 +361,52 @@ h2::after {
     display: block;
     width: 40px;
     height: 3px;
-    background: linear-gradient(90deg, #FB5455, #0058DB);
+    background: #FB5455;
     margin: 10px auto 0;
     border-radius: 2px;
 }
 
 .feature p {
     color: #666;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-member {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 88, 219, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #0058DB;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 88, 219, 0.2);
+}
+
+.team-member h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.team-member .role {
+    color: #0058DB;
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0;
 }
 
 address {
@@ -343,6 +489,46 @@ footer p {
         padding: 140px 20px 80px;
     }
 
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .team-member {
+        padding: 25px 15px;
+    }
+
+    .team-member h3 {
+        font-size: 1.1rem;
+    }
+
+    .screenshots-scroll {
+        justify-content: flex-start;
+        gap: 15px;
+        padding: 15px 5px 25px;
+    }
+
+    .phone-frame {
+        width: 150px;
+        height: 300px;
+        padding: 8px;
+        border-radius: 18px;
+    }
+
+    .phone-frame::before {
+        width: 40px;
+        height: 14px;
+        top: 6px;
+    }
+
+    .phone-screen {
+        border-radius: 12px;
+    }
+
+    .showcase-title {
+        font-size: 1.3rem;
+    }
+
     #hero h1 {
         font-size: 2.5rem;
     }
@@ -354,4 +540,59 @@ footer p {
     h2 {
         font-size: 2rem;
     }
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+    color: #FB5455;
 }

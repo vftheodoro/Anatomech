@@ -32,7 +32,7 @@
             <div class="container">
                 <img src="images/logos/anatomach_branco_semfundo.png" alt="AnatoMech" class="hero-logo">
                 <p class="tagline">Desenvolvimento de Sistemas Multiplataforma</p>
-                <p class="subtitle">Conheça o DeepBody - Nossa solução principal</p>
+                <p class="subtitle">Conheça o DeepBody - Realidade Aumentada para estudo de anatomia</p>
                 <a href="#produto" class="btn">Conheça o DeepBody</a>
             </div>
         </section>
@@ -47,20 +47,66 @@
         <section id="produto">
             <div class="container">
                 <img src="images/logos/DeepBody/DeepBody Negativo.png" alt="DeepBody" class="product-logo">
-                <p class="product-description">Nossa solução multiplataforma desenvolvida para atender demandas específicas do mercado com tecnologia de ponta.</p>
+                <p class="product-description">Aplicativo de Realidade Aumentada que transforma o aprendizado de anatomia humana em uma experiência imersiva e interativa para estudantes.</p>
                 <div class="features">
                     <article class="feature">
+                        <h3>Realidade Aumentada</h3>
+                        <p>Visualize órgãos e sistemas do corpo humano em 3D com RA</p>
+                    </article>
+                    <article class="feature">
+                        <h3>Estudo Interativo</h3>
+                        <p>Aprenda anatomia de forma prática e imersiva</p>
+                    </article>
+                    <article class="feature">
                         <h3>Multiplataforma</h3>
-                        <p>Funciona em diversos dispositivos e sistemas operacionais</p>
+                        <p>Disponível para dispositivos móveis e tablets</p>
                     </article>
-                    <article class="feature">
-                        <h3>Tecnologia Avançada</h3>
-                        <p>Desenvolvido com as mais modernas tecnologias do mercado</p>
-                    </article>
-                    <article class="feature">
-                        <h3>Interface Intuitiva</h3>
-                        <p>Design pensado para melhor experiência do usuário</p>
-                    </article>
+                </div>
+
+                <div class="app-showcase">
+                    <h3 class="showcase-title">Veja o DeepBody em ação</h3>
+                    <div class="screenshots-scroll">
+                        <div class="phone-mockup">
+                            <div class="phone-frame">
+                                <div class="phone-screen">
+                                    <img src="images/app_deepbody/Login DeepBody.png" alt="Tela de Login DeepBody">
+                                </div>
+                            </div>
+                            <span>Login</span>
+                        </div>
+                        <div class="phone-mockup">
+                            <div class="phone-frame">
+                                <div class="phone-screen">
+                                    <img src="images/app_deepbody/Explorar Sistemas (Cantos Arredondados).png" alt="Explorar Sistemas">
+                                </div>
+                            </div>
+                            <span>Explorar Sistemas</span>
+                        </div>
+                        <div class="phone-mockup">
+                            <div class="phone-frame">
+                                <div class="phone-screen">
+                                    <img src="images/app_deepbody/Detalhes da Estrutura.png" alt="Detalhes da Estrutura">
+                                </div>
+                            </div>
+                            <span>Detalhes da Estrutura</span>
+                        </div>
+                        <div class="phone-mockup">
+                            <div class="phone-frame">
+                                <div class="phone-screen">
+                                    <img src="images/app_deepbody/Atividades DeepBody.png" alt="Atividades DeepBody">
+                                </div>
+                            </div>
+                            <span>Atividades</span>
+                        </div>
+                        <div class="phone-mockup">
+                            <div class="phone-frame">
+                                <div class="phone-screen">
+                                    <img src="images/app_deepbody/Atividades - Visão do Professor.png" alt="Visão do Professor">
+                                </div>
+                            </div>
+                            <span>Visão do Professor</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -69,6 +115,24 @@
             <div class="container">
                 <h2>Nossa Equipe</h2>
                 <p>Estudantes do curso de Desenvolvimento de Sistemas Multiplataforma da Fatec de Registro, unidos pela paixão por tecnologia e inovação.</p>
+                <div class="team-grid">
+                    <article class="team-member">
+                        <h3>Victor Theodoro</h3>
+                        <p class="role">Programador</p>
+                    </article>
+                    <article class="team-member">
+                        <h3>Luiz Cubas</h3>
+                        <p class="role">Designer</p>
+                    </article>
+                    <article class="team-member">
+                        <h3>Pedro Lucas</h3>
+                        <p class="role">Analista de Dados</p>
+                    </article>
+                    <article class="team-member">
+                        <h3>Matheus Cherpinsky</h3>
+                        <p class="role">Arquiteto de Software</p>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -84,6 +148,14 @@
         </section>
     </main>
 
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img src="" alt="" id="lightbox-img">
+            <p class="lightbox-caption" id="lightbox-caption"></p>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <div class="footer-logos">
@@ -93,5 +165,36 @@
             <p>&copy; 2026 AnatoMech - Fatec de Registro. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        const screenshotImages = document.querySelectorAll('.phone-screen img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+
+        screenshotImages.forEach(img => {
+            img.addEventListener('click', function() {
+                lightboxImg.src = this.src;
+                lightboxImg.alt = this.alt;
+                lightboxCaption.textContent = this.closest('.phone-mockup').querySelector('span').textContent;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeLightbox(event) {
+            if (event.target === lightbox || event.target.classList.contains('lightbox-close')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
 </body>
 </html>
