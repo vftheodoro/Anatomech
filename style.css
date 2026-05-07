@@ -1,6 +1,12 @@
 header {
-    background-color: #0058DB;
-    color: white;
-    padding: 20px;
-    text-align: center;
+  background-color: #0058db;
+}
+
+.hero {
+  background:
+    linear-gradient(rgba(0, 88, 219), rgba(255, 255, 255, 0.8)),
+    url("images/fundo.png");
+
+    background-size: cover;
+    background-position: center;
 }
