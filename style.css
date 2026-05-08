@@ -26,3 +26,7 @@ section {
   .deepbody {
     background-color: #FB5455;
   }
+
+  .fatec-logo {
+  max-width: 150px;
+}
