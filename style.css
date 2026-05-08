@@ -1,12 +1,24 @@
+body {
+  font-family: 'K2D', sans-serif;
+}
+
 header {
   background-color: #0058db;
 }
 
-.hero {
+footer {
+  background-color: #0058db;
+}
+
+.home {
   background:
     linear-gradient(rgba(0, 88, 219), rgba(255, 255, 255, 0.8)),
     url("images/fundo.png");
 
     background-size: cover;
     background-position: center;
-}
+  }
+
+  .deepbody {
+    background-color: #FB5455;
+  }
