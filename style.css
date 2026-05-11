@@ -19,14 +19,30 @@ section {
     linear-gradient(rgba(0, 88, 219), rgba(255, 255, 255, 0.8)),
     url("images/fundo.png");
 
-    background-size: cover;
-    background-position: center;
-  }
+  background-size: cover;
+  background-position: center;
+}
 
-  .deepbody {
-    background-color: #FB5455;
-  }
+.deepbody {
+  background-color: #fb5455;
+}
 
-  .fatec-logo {
+.fatec-logo {
   max-width: 150px;
+}
+
+.home-dp {
+  background:
+    linear-gradient(#0058db, #fb5454a6, #fb5454a6, #fb5454a6, #fb5454),
+    url("images/ilustracao.png");
+
+  background-size: cover;
+  background-position: center;}
+
+.sobre-dp {
+  background-color: #fb5455;
+}
+
+.fdb{
+  background-color: #fb5455;
 }
