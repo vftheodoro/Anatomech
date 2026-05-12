@@ -3,33 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anatomech</title>
+    <title>DeepBody | Realidade Aumentada</title>
     <link rel="icon" href="images/logos/Logo Positiva.png" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link href="https://fonts.googleapis.com/css2?family=K2D:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <nav class="navbar">
+      <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <img src="images/logos/Logo Negativa.png" alt="Logo" height="40" />
+            <img src="images/logos/Logo Negativa.png" alt="AnatoMech Logo" />
           </a>
 
-          <div>
-            <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
+          <div class="ms-auto">
+            <ul class="navbar-nav d-flex flex-row gap-2 gap-md-3">
               <li class="nav-item">
-                <a class="btn btn-primary btn-light" href="#home">Home</a>
+                <a class="nav-link-custom" href="index.html#home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="btn btn-primary btn-light" href="#sobre">Sobre</a>
+                <a class="nav-link-custom" href="index.html#sobre">Sobre</a>
               </li>
               <li class="nav-item">
-                <a class="btn btn-primary btn-light" href="#contato">Contato</a>
+                <a class="nav-link-custom" href="index.html#contato">Contato</a>
               </li>
             </ul>
           </div>
@@ -38,50 +42,85 @@
     </header>
 
     <main>
-      <section class="home-dp">
-        <div class="container text-center p-2">
+      <section class="section-hero home-dp" id="home">
+        <div class="container">
           <img
             src="images/logos/DeepBody/DeepBody Positivo.png"
-            class="img-fluid p-"
-            alt="DeepBody"
+            class="img-fluid hero-logo rounded-5 shadow-lg"
+            alt="DeepBody Project Logo"
+            style="max-width: 250px;"
           />
-          <h2>
-            Nosso aplicativo de realidade aumentada para o aprendizado de
-            anatomia humana!
-          </h2>
+          <h1 class="display-3 fw-800 mb-3 text-white">Imersão Anatômica</h1>
+          <p class="h4 fw-light opacity-75 mb-5 text-white mx-auto" style="max-width: 700px;">
+            O futuro do aprendizado médico através da tecnologia de Realidade Aumentada de última geração.
+          </p>
         </div>
       </section>
 
-      <section class="sobre-dp">
+      <section class="sobre-dp" id="sobre">
         <div class="container">
-            <h1>Sobre o DeepBody</h1>
-            <p>
-                O DeepBody é um aplicativo inovador de realidade aumentada desenvolvido
-                para facilitar o aprendizado da anatomia humana. Ele oferece uma
-                experiência interativa e imersiva, permitindo que os usuários explorem
-                o corpo humano em detalhes.
-            </p>
-            <ul>
-                <li>Modelos 3D detalhados de órgãos e sistemas do corpo humano.</li>
-                <li>Interação em tempo real para explorar diferentes camadas anatômicas.</li>
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+               <h2 class="display-5 fw-bold text-white mb-4">Reinventando o Ensino</h2>
+               <p class="lead text-white opacity-90 mb-4">
+                  O <strong>DeepBody</strong> não é apenas um visualizador. É uma ferramenta pedagógica completa 
+                  que permite visualizar a complexidade do corpo humano com uma clareza sem precedentes.
+               </p>
+               <p class="text-white opacity-75 h5 fw-light">
+                  Utilizando tecnologia AR Core, transformamos qualquer ambiente em um laboratório de anatomia 
+                  interativo, facilitando a retenção de conhecimento e o engajamento dos estudantes.
+               </p>
+            </div>
+            <div class="col-lg-6">
+              <div class="backdrop-blur p-4 p-md-5 rounded-5 shadow-lg text-white">
+                <h3 class="h2 mb-4 fw-bold">Recursos Tecnológicos</h3>
+                <div class="d-flex mb-4">
+                  <i class="bi bi-layers-fill h2 me-3 text-white opacity-75"></i>
+                  <div>
+                    <h5 class="fw-bold mb-1">Múltiplas Camadas</h5>
+                    <p class="small opacity-75 mb-0">Navegue do sistema esquelético aos tecidos musculares com um toque.</p>
+                  </div>
+                </div>
+                <div class="d-flex mb-4">
+                  <i class="bi bi-arrows-fullscreen h2 me-3 text-white opacity-75"></i>
+                  <div>
+                    <h5 class="fw-bold mb-1">Escalabilidade Real</h5>
+                    <p class="small opacity-75 mb-0">Visualize órgãos em tamanho real ou amplie detalhes microscópicos.</p>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <i class="bi bi-cpu h2 me-3 text-white opacity-75"></i>
+                  <div>
+                    <h5 class="fw-bold mb-1">Renderização de Alta Performance</h5>
+                    <p class="small opacity-75 mb-0">Modelos 3D otimizados para uma experiência fluida em qualquer dispositivo.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-
-        
       </section>
     </main>
 
-    <footer class="fdb text-center p-4">
-      <div class="container">
+    <footer class="fdb py-5">
+      <div class="container text-center">
         <img
           src="images/logos/fatec_registro.png"
-          class="fatec-logo img-fluid mb-4"
-          alt="Fatec de Registro"
+          class="fatec-logo img-fluid mb-4 opacity-75"
+          alt="Fatec Registro Logo"
+          style="filter: brightness(0) invert(1);"
         />
+        <div class="mb-4">
+          <a href="#" class="text-white mx-2 h4 opacity-75"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-white mx-2 h4 opacity-75"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="text-white mx-2 h4 opacity-75"><i class="bi bi-github"></i></a>
+        </div>
+        <p class="small mb-0 opacity-75">
+          &copy; 2026 <strong>AnatoMech</strong>. Todos os direitos reservados.
+        </p>
       </div>
-      <p>
-        &copy; 2026 AnatoMech - Fatec de Registro. Todos os direitos reservados.
-      </p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

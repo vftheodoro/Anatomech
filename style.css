@@ -1,48 +1,249 @@
+:root {
+  --primary-blue: #0058db;
+  --secondary-red: #fb5455;
+  --dark-blue: #0047c7;
+  --light-bg: #f8f9fa;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'K2D', sans-serif;
+  font-family: "K2D", sans-serif;
+  color: #2d3436;
+  line-height: 1.7;
+  background-color: #fff;
 }
 
+/* --- Header & Navigation --- */
 header {
-  background-color: #0058db;
+  background-color: rgba(0, 88, 219, 0.96);
+  padding: 12px 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-footer {
-  background-color: #0058db;
+.navbar-brand img {
+  height: 44px;
+  width: auto;
+  transition: var(--transition);
 }
 
-section {
-  padding: 5%;
+.navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+.nav-link-custom {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  padding: 8px 22px !important;
+  border-radius: 50px;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.95rem;
+}
+
+.nav-link-custom:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff !important;
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- Hero Sections --- */
+.section-hero {
+  padding: 120px 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-logo {
+  max-height: 180px;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
 }
 
 .home {
-  background:
-    linear-gradient(rgba(0, 88, 219), rgba(255, 255, 255, 0.8)),
-    url("images/fundo.png");
-
+  background: linear-gradient(rgba(0, 88, 219, 0.85), rgba(0, 88, 219, 0.95)),
+              url("images/fundo.png");
   background-size: cover;
   background-position: center;
-}
-
-.deepbody {
-  background-color: #fb5455;
-}
-
-.fatec-logo {
-  max-width: 150px;
+  background-attachment: fixed;
+  color: #fff;
+  margin-top: -70px;
+  padding-top: 170px;
 }
 
 .home-dp {
-  background:
-    linear-gradient(#0058db, #fb5454a6, #fb5454a6, #fb5454a6, #fb5454),
-    url("images/ilustracao.png");
-
+  background: linear-gradient(rgba(0, 88, 219, 0.8), rgb(251, 84, 84)),
+              url("images/ilustracao.png");
   background-size: cover;
-  background-position: center;}
-
-.sobre-dp {
-  background-color: #fb5455;
+  background-position: center;
+  color: #fff;
 }
 
-.fdb{
-  background-color: #fb5455;
+/* --- Sections & Typography --- */
+section {
+  padding: 90px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary-blue);
+  border-radius: 2px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary-blue), #6c5ce7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Cards & Components --- */
+.deepbody-card {
+  background: linear-gradient(145deg, var(--secondary-red), #ff7675);
+  border-radius: 24px !important;
+  transition: var(--transition);
+  border: none;
+  overflow: hidden;
+}
+
+.deepbody-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(251, 84, 85, 0.35) !important;
+}
+
+.backdrop-blur {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sobre-dp {
+  background-color: var(--secondary-red);
+  color: #fff;
+}
+
+/* --- Gallery Carousel --- */
+.gallery-img {
+  height: 500px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.backdrop-blur-dark {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .gallery-img {
+    height: 300px;
+  }
+}
+
+/* --- Footers --- */
+.footer-main {
+  background: #0058db;
+  color: #ffffff;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.fdb {
+  background-color: #bd3e3e;
+  color: #000000;
+}
+
+.fatec-logo {
+  max-width: 140px;
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+.fatec-logo:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+/* --- Buttons --- */
+.btn-premium {
+  padding: 12px 35px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.btn-primary-custom {
+  background-color: #fff;
+  color: var(--primary-blue);
+  border: 2px solid #fff;
+}
+
+.btn-primary-custom:hover {
+  background-color: transparent;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-outline-white:hover {
+  background-color: #fff;
+  color: var(--primary-blue);
+}
+
+/* --- Contact Address --- */
+address div {
+  padding: 15px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+  transition: var(--transition);
+}
+
+address div:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 768px) {
+  section { padding: 60px 0; }
+  .section-title { font-size: 2rem; }
+  .home { padding-top: 130px; }
 }
