@@ -20,6 +20,23 @@ body {
   background-color: #fff;
 }
 
+/* --- Smooth SPA-like Page Transitions --- */
+main {
+  opacity: 0;
+  animation: mainFadeIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes mainFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* --- Header & Navigation --- */
 header {
   background-color: rgba(0, 88, 219, 0.96);
@@ -147,19 +164,24 @@ section {
 }
 
 .sobre-dp {
-  background-color: var(--secondary-red);
+  background-color: #fb5454;
   color: #fff;
 }
 
 /* --- Gallery Carousel --- */
+#deepbodyCarousel {
+  background-color: #121212;
+}
+
 .gallery-img {
-  height: 500px;
-  object-fit: cover;
-  object-position: top;
+  height: 550px;
+  object-fit: contain;
+  object-position: center;
+  padding: 30px;
 }
 
 .backdrop-blur-dark {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -167,7 +189,8 @@ section {
 
 @media (max-width: 768px) {
   .gallery-img {
-    height: 300px;
+    height: 350px;
+    padding: 15px;
   }
 }
 
@@ -240,6 +263,349 @@ address div {
 address div:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* --- Team Cards Section --- */
+.team-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 35px 24px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 88, 219, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 88, 219, 0.12) !important;
+  border-color: rgba(0, 88, 219, 0.15);
+}
+
+.team-avatar-container {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  overflow: hidden; /* Prevent square images from overflowing circle */
+}
+
+.team-avatar-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fit image perfectly within the circle */
+}
+
+.team-card:hover .team-avatar-container {
+  transform: scale(1.08) rotate(5deg);
+}
+
+/* Custom gradients for avatars */
+.avatar-vt {
+  background: linear-gradient(135deg, var(--primary-blue), #6c5ce7);
+}
+
+.avatar-lc {
+  background: linear-gradient(135deg, var(--secondary-red), #ff7675);
+}
+
+.avatar-m {
+  background: linear-gradient(135deg, #10ac84, #1dd1a1);
+}
+
+.avatar-r {
+  background: linear-gradient(135deg, #f39c12, #f1c40f);
+}
+
+.team-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #2d3436;
+}
+
+.team-role {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary-blue);
+  margin-bottom: 18px;
+}
+
+.team-desc {
+  font-size: 0.9rem;
+  color: #636e72;
+  margin-bottom: 24px;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+.team-socials a {
+  color: #b2bec3;
+  margin: 0 10px;
+  font-size: 1.25rem;
+  transition: var(--transition);
+}
+
+.team-socials a:hover {
+  color: var(--primary-blue);
+}
+
+/* --- Glass Badges (Hero Stack) --- */
+.bg-glass-badge {
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.border-glass {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.hero-badges span {
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.hero-badges span:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  transform: translateY(-2px);
+}
+
+/* --- Technology Stack --- */
+.stack-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: var(--transition);
+  height: 100%;
+}
+
+.stack-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 88, 219, 0.08) !important;
+  border-color: rgba(0, 88, 219, 0.1);
+}
+
+.stack-card i {
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.stack-card:hover i {
+  transform: scale(1.15);
+}
+
+/* --- Contact Section Enhancements --- */
+.contact-info-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 88, 219, 0.05);
+  transition: var(--transition);
+}
+
+.contact-info-card:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 25px rgba(0, 88, 219, 0.08);
+  border-color: rgba(0, 88, 219, 0.1);
+}
+
+.contact-icon-wrapper {
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, var(--primary-blue), #6c5ce7);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 88, 219, 0.2);
+}
+
+.contact-form-container {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04) !important;
+}
+
+.form-control-custom {
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-radius: 12px !important;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.form-control-custom:focus {
+  border-color: var(--primary-blue) !important;
+  box-shadow: 0 0 0 4px rgba(0, 88, 219, 0.15) !important;
+}
+
+.btn-primary-gradient {
+  background: linear-gradient(135deg, var(--primary-blue), #6c5ce7);
+  border: none;
+}
+
+.btn-primary-gradient:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 88, 219, 0.3) !important;
+}
+
+/* --- DeepBody Custom Styling (Enhancements) --- */
+.sobre-dp {
+  background-color: #fb5454 !important; /* Perfect seamless match to hero bottom color */
+  color: #fff;
+  padding: 80px 0;
+}
+
+.feature-item-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 24px;
+  transition: var(--transition);
+}
+
+.feature-item-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Premium Smartphone Mockup --- */
+.phone-mockup {
+  position: relative;
+  width: 290px;
+  height: 590px;
+  background-color: #000;
+  border: 12px solid #1e293b; /* Sleek metallic bezel */
+  border-radius: 40px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45), 
+              0 0 0 3px rgba(255, 255, 255, 0.05),
+              0 15px 35px rgba(251, 84, 85, 0.25); /* Sleek deepbody red aura glow */
+  overflow: hidden;
+  z-index: 5;
+  transition: var(--transition);
+}
+
+.phone-mockup:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.55), 
+              0 0 0 3px rgba(255, 255, 255, 0.08),
+              0 20px 45px rgba(251, 84, 85, 0.35);
+}
+
+/* Smartphone Notch / Camera Island */
+.phone-mockup::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 18px;
+  background-color: #000;
+  border-radius: 10px;
+  z-index: 20;
+}
+
+/* Smartphone Screen Area */
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background-color: #121212;
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.phone-screen .carousel,
+.phone-screen .carousel-inner,
+.phone-screen .carousel-item {
+  width: 100%;
+  height: 100%;
+}
+
+.phone-screen .gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 0 !important;
+}
+
+.phone-screen .carousel-caption {
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  padding: 20px 15px 15px 15px !important;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.95)) !important;
+  margin-bottom: 0 !important;
+  text-align: center;
+}
+
+.phone-screen .carousel-caption h6 {
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.phone-screen .carousel-caption p.x-small {
+  font-size: 0.72rem;
+  line-height: 1.3;
+}
+
+/* Premium External Navigation Buttons */
+.carousel-nav-btn {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-blue);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  font-size: 1.25rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-nav-btn:hover {
+  background: var(--primary-blue);
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 88, 219, 0.2);
+}
+
+.page-deepbody .carousel-nav-btn {
+  color: var(--secondary-red);
+}
+
+.page-deepbody .carousel-nav-btn:hover {
+  background: var(--secondary-red);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(251, 84, 85, 0.3);
+}
+
+@media (max-width: 576px) {
+  .carousel-nav-btn {
+    display: none !important; /* Hide external buttons on very small screens, swipe works natively */
+  }
 }
 
 @media (max-width: 768px) {

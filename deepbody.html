@@ -16,12 +16,14 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="page-deepbody">
     <header>
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
             <img src="images/logos/Logo Negativa.png" alt="AnatoMech Logo" />
+            <div class="vr bg-white opacity-50 d-none d-sm-block" style="height: 30px; width: 1.5px;"></div>
+            <img src="images/logos/fatec_registro.png" alt="Fatec Registro Logo" class="d-none d-sm-block" style="height: 35px; filter: brightness(0) invert(1);" />
           </a>
 
           <div class="ms-auto">
@@ -45,10 +47,10 @@
       <section class="section-hero home-dp" id="home">
         <div class="container">
           <img
-            src="images/logos/DeepBody/DeepBody Positivo.png"
-            class="img-fluid hero-logo rounded-5 shadow-lg"
+            src="images/logos/DeepBody/DeepBody Negativo.png"
+            class="img-fluid hero-logo mb-4"
             alt="DeepBody Project Logo"
-            style="max-width: 250px;"
+            style="max-width: 480px; width: 85%; max-height: none !important; filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.35));"
           />
           <h1 class="display-3 fw-800 mb-3 text-white">Imersão Anatômica</h1>
           <p class="h4 fw-light opacity-75 mb-5 text-white mx-auto" style="max-width: 700px;">
@@ -68,31 +70,37 @@
                </p>
                <p class="text-white opacity-75 h5 fw-light">
                   Utilizando tecnologia AR Core, transformamos qualquer ambiente em um laboratório de anatomia 
-                  interativo, facilitando a retenção de conhecimento e o engajamento dos estudantes.
+                  interativo, facilitando a retention de conhecimento e o engajamento dos estudantes.
                </p>
             </div>
             <div class="col-lg-6">
-              <div class="backdrop-blur p-4 p-md-5 rounded-5 shadow-lg text-white">
-                <h3 class="h2 mb-4 fw-bold">Recursos Tecnológicos</h3>
-                <div class="d-flex mb-4">
-                  <i class="bi bi-layers-fill h2 me-3 text-white opacity-75"></i>
-                  <div>
-                    <h5 class="fw-bold mb-1">Múltiplas Camadas</h5>
-                    <p class="small opacity-75 mb-0">Navegue do sistema esquelético aos tecidos musculares com um toque.</p>
+              <h3 class="h2 mb-4 fw-bold text-white">Recursos Tecnológicos</h3>
+              <div class="d-flex flex-column gap-3">
+                <div class="feature-item-card text-white">
+                  <div class="d-flex">
+                    <i class="bi bi-layers-fill h2 me-3 text-white opacity-75"></i>
+                    <div>
+                      <h5 class="fw-bold mb-1">Múltiplas Camadas</h5>
+                      <p class="small opacity-75 mb-0">Navegue do sistema esquelético aos tecidos musculares com um toque.</p>
+                    </div>
                   </div>
                 </div>
-                <div class="d-flex mb-4">
-                  <i class="bi bi-arrows-fullscreen h2 me-3 text-white opacity-75"></i>
-                  <div>
-                    <h5 class="fw-bold mb-1">Escalabilidade Real</h5>
-                    <p class="small opacity-75 mb-0">Visualize órgãos em tamanho real ou amplie detalhes microscópicos.</p>
+                <div class="feature-item-card text-white">
+                  <div class="d-flex">
+                    <i class="bi bi-arrows-fullscreen h2 me-3 text-white opacity-75"></i>
+                    <div>
+                      <h5 class="fw-bold mb-1">Escalabilidade Real</h5>
+                      <p class="small opacity-75 mb-0">Visualize órgãos em tamanho real ou amplie detalhes microscópicos.</p>
+                    </div>
                   </div>
                 </div>
-                <div class="d-flex">
-                  <i class="bi bi-cpu h2 me-3 text-white opacity-75"></i>
-                  <div>
-                    <h5 class="fw-bold mb-1">Renderização de Alta Performance</h5>
-                    <p class="small opacity-75 mb-0">Modelos 3D otimizados para uma experiência fluida em qualquer dispositivo.</p>
+                <div class="feature-item-card text-white">
+                  <div class="d-flex">
+                    <i class="bi bi-cpu h2 me-3 text-white opacity-75"></i>
+                    <div>
+                      <h5 class="fw-bold mb-1">Renderização de Alta Performance</h5>
+                      <p class="small opacity-75 mb-0">Modelos 3D otimizados para uma experiência fluida em qualquer dispositivo.</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -100,24 +108,131 @@
           </div>
         </div>
       </section>
+
+      <section class="galeria-dp bg-light py-5" id="galeria">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="section-title text-dark">Interface do Aplicativo</h2>
+            <p class="lead text-muted mx-auto" style="max-width: 600px;">
+              Conheça as principais telas do DeepBody e veja como funciona a nossa experiência educacional interativa.
+            </p>
+          </div>
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12 d-flex align-items-center justify-content-center gap-3 gap-md-5">
+              <!-- Botão de controle esquerdo personalizado -->
+              <button class="carousel-nav-btn prev" type="button" data-bs-target="#deepbodyCarousel" data-bs-slide="prev">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+
+              <!-- Mockup de Smartphone Premium -->
+              <div class="phone-mockup">
+                <div class="phone-screen">
+                  <div id="deepbodyCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+                    <div class="carousel-indicators" style="bottom: 85px; z-index: 15;">
+                      <button type="button" data-bs-target="#deepbodyCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#deepbodyCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#deepbodyCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#deepbodyCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                      <button type="button" data-bs-target="#deepbodyCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    </div>
+                    <div class="carousel-inner h-100">
+                      <div class="carousel-item active h-100">
+                        <img src="images/app_deepbody/Login DeepBody.png" class="d-block w-100 gallery-img" alt="Tela de Login" />
+                        <div class="carousel-caption">
+                          <h6 class="fw-bold text-white mb-1">Acesso Seguro</h6>
+                          <p class="x-small text-white opacity-85 mb-0">Autenticação rápida para professores e alunos.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item h-100">
+                        <img src="images/app_deepbody/Explorar Sistemas (Cantos Arredondados).png" class="d-block w-100 gallery-img" alt="Exploração de Sistemas" />
+                        <div class="carousel-caption">
+                          <h6 class="fw-bold text-white mb-1">Navegação Geral</h6>
+                          <p class="x-small text-white opacity-85 mb-0">Explore sistemas corporais de forma interativa.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item h-100">
+                        <img src="images/app_deepbody/Detalhes da Estrutura.png" class="d-block w-100 gallery-img" alt="Visualização Detalhada" />
+                        <div class="carousel-caption">
+                          <h6 class="fw-bold text-white mb-1">Foco Detalhado</h6>
+                          <p class="x-small text-white opacity-85 mb-0">Amplie e analise órgãos e tecidos individualmente.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item h-100">
+                        <img src="images/app_deepbody/Atividades DeepBody.png" class="d-block w-100 gallery-img" alt="Painel de Atividades" />
+                        <div class="carousel-caption">
+                          <h6 class="fw-bold text-white mb-1">Desafios Práticos</h6>
+                          <p class="x-small text-white opacity-85 mb-0">Atividades e questionários para fixar o aprendizado.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item h-100">
+                        <img src="images/app_deepbody/Atividades - Visão do Professor.png" class="d-block w-100 gallery-img" alt="Painel do Professor" />
+                        <div class="carousel-caption">
+                          <h6 class="fw-bold text-white mb-1">Gestão de Turmas</h6>
+                          <p class="x-small text-white opacity-85 mb-0">Acompanhamento e criação de tarefas pelo educador.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Botão de controle direito personalizado -->
+              <button class="carousel-nav-btn next" type="button" data-bs-target="#deepbodyCarousel" data-bs-slide="next">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="fdb py-5">
-      <div class="container text-center">
-        <img
-          src="images/logos/fatec_registro.png"
-          class="fatec-logo img-fluid mb-4 opacity-75"
-          alt="Fatec Registro Logo"
-          style="filter: brightness(0) invert(1);"
-        />
-        <div class="mb-4">
-          <a href="#" class="text-white mx-2 h4 opacity-75"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="text-white mx-2 h4 opacity-75"><i class="bi bi-linkedin"></i></a>
-          <a href="#" class="text-white mx-2 h4 opacity-75"><i class="bi bi-github"></i></a>
+      <div class="container">
+        <div class="row g-4 text-center text-md-start text-white">
+          <div class="col-md-5">
+            <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-3 mb-3">
+              <img src="images/logos/Logo Negativa.png" alt="AnatoMech Logo" style="height: 35px;" />
+              <div class="vr bg-white opacity-50" style="height: 25px; width: 1.5px;"></div>
+              <h4 class="h5 fw-bold mb-0 text-white">AnatoMech</h4>
+            </div>
+            <p class="small opacity-75 mb-4 text-white" style="max-width: 400px;">
+              Desenvolvendo soluções digitais multiplataforma inovadoras e promovendo o aprendizado imersivo. Projeto Integrador em colaboração com a FATEC Registro.
+            </p>
+            <div class="d-flex justify-content-center justify-content-md-start gap-3 mb-3">
+              <a href="#" class="text-white opacity-75 hover-opacity-100 fs-4 transition-all" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-white opacity-75 hover-opacity-100 fs-4 transition-all" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="text-white opacity-75 hover-opacity-100 fs-4 transition-all" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            </div>
+          </div>
+          <div class="col-md-3 ms-auto">
+            <h5 class="fw-bold text-white mb-3">Navegação</h5>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="index.html#home" class="text-white text-decoration-none opacity-75 hover-opacity-100 small transition-all"><i class="bi bi-chevron-right small me-1"></i> Home</a></li>
+              <li class="mb-2"><a href="index.html#sobre" class="text-white text-decoration-none opacity-75 hover-opacity-100 small transition-all"><i class="bi bi-chevron-right small me-1"></i> Sobre Nós</a></li>
+              <li class="mb-2"><a href="index.html#projetos" class="text-white text-decoration-none opacity-75 hover-opacity-100 small transition-all"><i class="bi bi-chevron-right small me-1"></i> Projetos</a></li>
+              <li class="mb-2"><a href="index.html#contato" class="text-white text-decoration-none opacity-75 hover-opacity-100 small transition-all"><i class="bi bi-chevron-right small me-1"></i> Contato</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5 class="fw-bold text-white mb-3">FATEC Registro</h5>
+            <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mb-3">
+              <img src="images/logos/fatec_registro.png" class="img-fluid" alt="Fatec Registro Logo" style="max-height: 45px; filter: brightness(0) invert(1);" />
+            </div>
+            <p class="small opacity-75 mb-0 text-white">
+              DSM &bull; Desenvolvimento de Software Multiplataforma<br>
+              Registro - SP
+            </p>
+          </div>
         </div>
-        <p class="small mb-0 opacity-75">
-          &copy; 2026 <strong>AnatoMech</strong>. Todos os direitos reservados.
-        </p>
+        <hr class="bg-white opacity-25 my-4">
+        <div class="text-center text-md-between d-md-flex justify-content-md-between align-items-center text-white">
+          <p class="small mb-0 opacity-75">
+            &copy; 2026 <strong>AnatoMech</strong>. Todos os direitos reservados.
+          </p>
+          <p class="small mb-0 opacity-50 d-none d-md-block">
+            PI 1º Semestre &bull; DSM FATEC
+          </p>
+        </div>
       </div>
     </footer>
 
