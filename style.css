@@ -48,8 +48,9 @@ header {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+
 .navbar-brand img {
-  height: 50px;
+  height: 44px;
   width: auto;
   transition: var(--transition);
 }
@@ -86,10 +87,12 @@ header {
 }
 
 .hero-logo {
-  max-height: 240px;
+  max-height: 180px;
   margin-bottom: 2rem;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
-}.home {
+}
+
+.home {
   background: linear-gradient(rgba(0, 88, 219, 0.85), rgba(0, 88, 219, 0.95)),
               url("images/fundo.png");
   background-size: cover;
@@ -163,43 +166,9 @@ section {
 .sobre-dp {
   background-color: #fb5454;
   color: #fff;
-  margin-top: -2px;
-  position: relative;
 }
 
 /* --- Gallery Carousel --- */
-<<<<<<< HEAD
-.gallery-section {
-  background: linear-gradient(180deg, var(--light-bg), #eaeef3);
-  margin-top: -2px;
-  position: relative;
-}
-
-.app-screenshot {
-  max-height: 480px;
-  width: auto;
-  border: 10px solid #1e272e;
-  border-radius: 32px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  transition: var(--transition);
-}
-
-.app-screenshot:hover {
-  transform: scale(1.03) translateY(-5px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: var(--primary-blue);
-  border-radius: 50%;
-  padding: 18px;
-  background-size: 50%;
-}
-
-.carousel-indicators [data-bs-target] {
-  background-color: var(--primary-blue);
-=======
 #deepbodyCarousel {
   background-color: #121212;
 }
@@ -209,7 +178,6 @@ section {
   object-fit: contain;
   object-position: center;
   padding: 30px;
->>>>>>> b498b7c400db14ea7d6283c50593614dc6ecf52d
 }
 
 .backdrop-blur-dark {
@@ -219,8 +187,6 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-<<<<<<< HEAD
-=======
 @media (max-width: 768px) {
   .gallery-img {
     height: 350px;
@@ -228,30 +194,16 @@ section {
   }
 }
 
->>>>>>> b498b7c400db14ea7d6283c50593614dc6ecf52d
 /* --- Footers --- */
 .footer-main {
-  background: linear-gradient(135deg, var(--primary-blue), #0045ab);
+  background: #0058db;
   color: #ffffff;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .fdb {
-  background: linear-gradient(135deg, #bd3e3e, #8c2828);
-  color: #ffffff !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.social-icon {
-  color: rgba(255, 255, 255, 0.75) !important;
-  transition: var(--transition);
-  display: inline-block;
-}
-
-.social-icon:hover {
-  color: #ffffff !important;
-  transform: translateY(-4px) scale(1.25);
-  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+  background-color: #bd3e3e;
+  color: #000000;
 }
 
 .fatec-logo {
@@ -661,37 +613,3 @@ address div:hover {
   .section-title { font-size: 2rem; }
   .home { padding-top: 130px; }
 }
-
-/* --- Animations --- */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.animate-slide-up {
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Delay classes */
-.delay-1 { animation-delay: 0.15s; }
-.delay-2 { animation-delay: 0.3s; }
-.delay-3 { animation-delay: 0.45s; }
